@@ -2,6 +2,8 @@ angular.module("cart", []).factory("cart", function () {
 	var cartData = [];
 	return {
 		addProduct: function (id, name, price) {
+
+			console.log(id);
 			var addedToExistingItem = false;			
 			for (var i = 0; i < cartData.length; i++) {			
 					if (cartData[i].id == id) {
