@@ -22,11 +22,9 @@ todoApp.controller("ToDoCtrl", function ($scope) {
 });
 
 todoApp.run(function ($http) {
-	$http.get("http://localhost:50220/api/values").success(function (data) {
-
-		console.log(data);
-
-		//model.items = data;
+	//$http.get("http://localhost:50220/home/todo").success(function (data) {				
+	$http.get("/Scripts/todo.json").success(function (data) {					
+		//model.items = angular.toJson(data);
 	});
 });
 
@@ -41,6 +39,7 @@ todoApp.filter("checkedItems", function () {
 		return resultArr;
 	}
 });
+
 
 var model = {
 	user: "Adam",
