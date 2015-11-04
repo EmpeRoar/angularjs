@@ -15,9 +15,6 @@
 <script src="/Scripts/angular.min.js"></script>
 <script src="/Scripts/todoapp.js"></script>
 
-<script>
-
-</script>
 
 </head>
 <body ng-controller="ToDoCtrl">
