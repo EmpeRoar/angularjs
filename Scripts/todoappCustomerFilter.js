@@ -21,6 +21,23 @@ todoApp.controller("ToDoCtrl", function ($scope) {
 
 });
 
+todoApp.run(function ($http) {
+	$http.get("todo.json").success(function (data) {
+		model.items = data;
+	});
+});
+
+todoApp.filter("checkedItems", function () {
+	return function (items, showComplete) {
+		var resultArr = [];
+		angular.forEach(items, function (item) {
+			if (item.done == false || showComplete == true) {
+				resultArr.push(item);
+			}
+		});
+		return resultArr;
+	}
+});
 
 var model = {
 	user: "Adam",

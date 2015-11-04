@@ -13,7 +13,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 
 <script src="/Scripts/angular.min.js"></script>
-<script src="/Scripts/todoapp.js"></script>
+<script src="/Scripts/todoappCustomerFilter.js"></script>
 
 
 </head>
@@ -43,13 +43,15 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="item in todo.items | filter:{done: false} | orderBy:'action'">
+				<tr ng-repeat="item in todo.items  | orderBy:'action'">
 					<td>{{item.action}}</td>
 					<td><input type="checkbox" ng-model="item.done" /></td>					
 				</tr>
 			</tbody>
 		</table>
-
+		<div class="checkbox-inline">
+			<label><input type="checkbox" ng_model="showComplete"> Show Complete</label>
+		</div>
 	</div>
 </body>
 </html>
