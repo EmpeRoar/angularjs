@@ -22,15 +22,17 @@
 	<script src="/filters/customFilters.js"></script>
 </head>	
 <body ng-controller="sportsStoreCtrl">
-	
 	<div class="navbar navbar-inverse">
 		<a class="navbar-brand" href="#">SPORTS STORE</a>
 	</div>
 	<div class="panel panel-default row" ng-controller="productListCtrl">
 		<div class="col-xs-3">
 			<a ng-click="selectCategory()" class="btn btn-block btn-default btn-lg">Home</a>
-			<a ng-repeat="item in data.products | orderBy:'category' | unique:'category'" ng-click="selectCategory(item)" class=" btn btn-block btn-default btn-lg">
-				{{item}}
+			<a ng-repeat="item in data.products | orderBy:'category' | unique:'category'" 
+			   ng-click="selectCategory(item)" 
+			   class=" btn btn-block btn-default btn-lg"
+			   ng-class="getCategoryClass(item)">
+			   {{item}}
 			</a>
 		</div>
 		<div class="col-xs-8">

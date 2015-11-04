@@ -1,4 +1,6 @@
-angular.module("sportsStore").controller("productListCtrl", function ($scope, $filter) {
+angular.module("sportsStore")
+	   .constant("productListActiveClass", "btn-primary")
+	   .controller("productListCtrl", function ($scope, $filter, productListActiveClass) {
 	
 	var selectedCategory = null;
 	
@@ -10,5 +12,8 @@ angular.module("sportsStore").controller("productListCtrl", function ($scope, $f
 	$scope.categoryFilterFn = function (product) {
 		return selectedCategory == null || product.category == selectedCategory;
 	}
-
+	
+	$scope.getCategoryClass = function (category) {
+		return selectedCategory == category ? productListActiveClass : "";
+	}
 });
