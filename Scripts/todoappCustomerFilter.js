@@ -22,8 +22,11 @@ todoApp.controller("ToDoCtrl", function ($scope) {
 });
 
 todoApp.run(function ($http) {
-	$http.get("todo.json").success(function (data) {
-		model.items = data;
+	$http.get("http://localhost:50220/api/values").success(function (data) {
+
+		console.log(data);
+
+		//model.items = data;
 	});
 });
 
