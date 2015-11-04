@@ -15,8 +15,11 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 
 	<script src="ngmodules/angular-route.js"></script>
+	<script src="ngmodules/angular-resource.js"></script>
+
 <script>
-angular.module("sportsStoreAdmin", ["ngRoute"]).config(function ($routeProvider) {
+angular.module("sportsStoreAdmin", ["ngRoute", "ngResource"]).config(
+	function ($routeProvider) {
 		$routeProvider.when("/login", {
 		templateUrl: "/views/adminLogin.html"
 	});
@@ -29,6 +32,7 @@ angular.module("sportsStoreAdmin", ["ngRoute"]).config(function ($routeProvider)
 });
 </script>
 <script src="controllers/adminControllers.js"></script>
+<script src="controllers/adminProductController.js"></script>
 </head>
 <body>
 	<ng-view />
