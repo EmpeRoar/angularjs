@@ -44,7 +44,12 @@
 					<th>Done</th>
 				</tr>
 			</thead>
-			<tbody></tbody>
+			<tbody>
+				<tr ng-repeat="item in todo.items">
+					<td>{{item.action}}</td>
+					<td>{{item.done}}</td>
+				</tr>
+			</tbody>
 		</table>
 
 	</div>
