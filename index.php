@@ -1,13 +1,36 @@
-<html ng-app>
+<html ng-app="MainApp" ng-controller="CustomerListController">
 	<head>
 		<title>Take My Up! AngularJs</title>
 		<meta name="description" content="AngularJs consuming asp.net webapi"/>
 		<script src="/Scripts/angular.min.js"></script>
+		<script src="/Scripts/app.js"></script>
 
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 	</head>
-	<body>
+	<body >
+		
+		<br/>	
+		<div  class="container">
+
 			<div>
-					Hello Angular
+				Search: <input class="form-control" ng-model="query">
 			</div>	
+			<br/>
+			<ul class="list-group">
+			    <li class="list-group-item" ng-repeat="customer in customers">
+			      <span>{{customer.name}}</span> / <span>{{customer.age}}</span>
+			    </li>
+			</ul>
+
+		</div>	
+			
+
 	</body>
 </html>
